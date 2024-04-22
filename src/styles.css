@@ -1,0 +1,64 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: 'CoFo Sans';
+  src: url('/public/assets/fonts/cofo/CoFoSans-Regular.eot');
+  src: url('/public/assets/fonts/cofo/CoFoSans-Regular.eot?#iefix')
+      format('embedded-opentype'),
+    url('/public/assets/fonts/cofo/CoFoSans-Regular.woff2') format('woff2'),
+    url('/public/assets/fonts/cofo/CoFoSans-Regular.woff') format('woff'),
+    url('/public/assets/fonts/cofo/CoFoSans-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'CoFo Sans';
+  src: url('/public/assets/fonts/cofo/CoFoSans-Medium.eot');
+  src: url('/public/assets/fonts/cofo/CoFoSans-Medium.eot?#iefix')
+      format('embedded-opentype'),
+    url('/public/assets/fonts/cofo/CoFoSans-Medium.woff2') format('woff2'),
+    url('/public/assets/fonts/cofo/CoFoSans-Medium.woff') format('woff'),
+    url('/public/assets/fonts/cofo/CoFoSans-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Villula';
+  src: url('/public/assets/fonts/villula/Villula-Regular.eot');
+  src: url('/public/assets/fonts/villula/Villula-Regular.eot?#iefix')
+      format('embedded-opentype'),
+    url('/public/assets/fonts/villula/Villula-Regular.woff2') format('woff2'),
+    url('/public/assets/fonts/villula/Villula-Regular.woff') format('woff'),
+    url('/public/assets/fonts/villula/Villula-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@layer base {
+  body {
+    @apply font-cofo bg-brand-whitish;
+  }
+
+  section {
+    @apply pb-8 sm:pb-16 xl:pb-24;
+  }
+
+  h2 {
+    @apply lg:text-5xl font-medium;
+  }
+
+  h3 {
+    @apply lg:text-brand-3xl font-medium;
+  }
+
+  h4 {
+    @apply xs:text-lg sm:text-xl md:text-2xl font-medium lg:leading-7;
+  }
+}

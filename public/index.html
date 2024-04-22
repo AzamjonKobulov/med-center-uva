@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/styles.css" />
+    <title>Med Center Uva</title>
+  </head>
+  <body>
+    <!-- HEADER -->
+    <header class="bg-white rounded-b-2xl lg:rounded-b-base shadow-base">
+      <!-- Navbar -->
+      <nav>
+        <!-- Top -->
+        <div
+          class="h-7 lg:h-9 flex items-center justify-center gap-1 text-xs lg:text-sm font-medium text-brand-orange border-b border-brand-light-gray"
+        >
+          <p>График работы клиники 1-9 мая</p>
+          <svg
+            width="16"
+            height="16"
+            viewBox="0 0 16 16"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M6.19334 10.5866L8.78 7.99997L6.19334 5.41331C6.13162 5.35158 6.08266 5.27831 6.04925 5.19767C6.01585 5.11703 5.99866 5.03059 5.99866 4.94331C5.99866 4.85602 6.01585 4.76959 6.04925 4.68894C6.08266 4.6083 6.13162 4.53503 6.19334 4.47331C6.25506 4.41158 6.32833 4.36262 6.40898 4.32922C6.48962 4.29582 6.57605 4.27863 6.66334 4.27863C6.75062 4.27863 6.83706 4.29582 6.9177 4.32922C6.99834 4.36262 7.07162 4.41158 7.13334 4.47331L10.1933 7.53331C10.4533 7.79331 10.4533 8.21331 10.1933 8.47331L7.13334 11.5333C7.07166 11.5951 6.9984 11.6441 6.91775 11.6776C6.8371 11.711 6.75065 11.7283 6.66334 11.7283C6.57603 11.7283 6.48957 11.711 6.40892 11.6776C6.32827 11.6441 6.25501 11.5951 6.19334 11.5333C5.94 11.2733 5.93334 10.8466 6.19334 10.5866Z"
+              fill="#FF8F0D"
+            />
+          </svg>
+        </div>
+        <!-- Bottom -->
+        <div
+          class="max-w-nav mx-auto flex items-center justify-between py-2.5 lg:py-4 px-5"
+        >
+          <!-- Logo -->
+          <div class="w-36 h-10 lg:w-40 lg:h-12">
+            <img
+              src="./assets/images/logo.png"
+              alt="Logo"
+              class="w-full h-full"
+            />
+          </div>
+          <!-- LInks  -->
+          <ul
+            class="hidden lg:flex items-center gap-5 xl:gap-8 font-medium text-brand-dark/60 text-sm xl:text-base"
+          >
+            <li>
+              <a
+                href="#"
+                class="hover:text-brand-dark transition-all duration-300"
+                >Главная</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                class="hover:text-brand-dark transition-all duration-300"
+                >Направления</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                class="hover:text-brand-dark transition-all duration-300"
+                >Цены</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                class="hover:text-brand-dark transition-all duration-300"
+                >Лицензии</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                class="hover:text-brand-dark transition-all duration-300"
+                >Контакты</a
+              >
+            </li>
+          </ul>
+          <!-- Contacts -->
+          <div class="flex items-center gap-5 lg:gap-6 xl:gap-8">
+            <!-- Phone -->
+            <div
+              class="hidden lg:flex flex-col xl:flex-row xl:items-center xl:gap-4"
+            >
+              <a
+                href="tel:"
+                class="font-medium text-sm xl:text-base hover:text-brand-dark/60 transition-all duration-300"
+              >
+                8 (950) 163-53-43
+              </a>
+              <p class="text-brand-xs xl:text-xs text-brand-dark/60">
+                пн-пт: с 8.00 до 18.00 <br class="hidden xl:block" />
+                сб: с 9.00 до 14.00
+              </p>
+            </div>
+            <!-- Button -->
+            <button
+              class="h-8 lg:h-10 bg-gradient-to-r from-brand-orange-200 to-brand-orange-100 font-medium text-white text-xs sm:text-sm rounded-lg lg:rounded-xl hover:bg-gradient-to-l transition-all duration-300 px-3 sm:px-4"
+            >
+              Заказать звонок
+            </button>
+            <!-- Mobile Menu Button -->
+            <button class="lg:hidden">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                class="w-6 h-6"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
+                />
+              </svg>
+            </button>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <!-- MAIN -->
+    <main id="main">
+      <!-- Hero -->
+      <section id="hero" class="pt-5 lg:pt-8">
+        <div class="max-w-base mx-auto grid lg:grid-cols-2 gap-5 lg:gap-8 px-5">
+          <!-- Left -->
+          <div
+            class="h-96 xs:h-[30rem] md:h-[36.25rem] relative group flex flex-col justify-between bg-doctor text-white rounded-3xl lg:rounded-base xl:rounded-56 shadow-base overflow-hidden p-5 md:p-8"
+          >
+            <h1
+              class="max-w-56 xs:max-w-64 md:max-w-72 relative z-10 text-2xl xs:text-3xl sm:text-brand-4xl font-medium leading-6 md:leading-9"
+            >
+              Прием <br />
+              без очередей <br />
+              по доступной <br />
+              цене
+            </h1>
+            <!-- Doctor Image -->
+            <img
+              src="./assets/images/img-doctor.png"
+              alt="Doctor Image"
+              class="absolute lg:-bottom-2/3 -right-[20%] md:-top-10 lg:top-0 z-10 group-hover:scale-110 transition-all duration-300"
+            />
+            <!-- Heart Top -->
+            <img
+              src="./assets/images/img-hero-heart-top.png"
+              alt="Heart Image"
+              class="absolute top-16 right-6"
+            />
+            <!-- Heart Center -->
+            <img
+              src="./assets/images/img-hero-heart-center.png"
+              alt="Heart Image"
+              class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
+            />
+            <!-- Heart Bottom -->
+            <img
+              src="./assets/images/img-hero-heart-bottom.png"
+              alt="Heart Image"
+              class="absolute bottom-32 left-14"
+            />
+            <div
+              class="relative z-10 flex items-center justify-between mt-auto"
+            >
+              <p
+                class="text-sm xs:text-lg md:text-xl lg:text-lg leading-4 sm:leading-5"
+              >
+                Мы будем рады <br />
+                вам помочь!
+              </p>
+              <!-- Button -->
+              <button
+                class="h-10 xs:h-12 md:h-16 bg-gradient-to-r from-brand-orange-200 to-brand-orange-100 font-medium text-white text-sm sm:base md:text-xl rounded-xl md:rounded-20 hover:bg-gradient-to-l transition-all duration-300 px-4 xs:px-6"
+              >
+                Записаться на прием
+              </button>
+            </div>
+          </div>
+          <!-- Right -->
+          <div class="space-y-5 lg:space-y-8">
+            <!-- Top -->
+            <div
+              class="space-y-5 lg:space-y-2 bg-white rounded-3xl lg:rounded-base shadow-base p-5 lg:py-8 xl:p-6"
+            >
+              <!-- Text -->
+              <div class="flex items-center justify-between">
+                <h4 class="leading-5 sm:leading-7">
+                  Приглашаем <br />
+                  пройти обследование
+                </h4>
+                <button
+                  class="w-9 h-9 sm:w-12 sm:h-12 group grid place-content-center hover:bg-brand-dark/5 hover:border-brand-dark/5 border border-brand-dark/20 rounded-xl sm:rounded-2xl transition-all duration-300"
+                >
+                  <svg
+                    width="9"
+                    height="16"
+                    viewBox="0 0 9 16"
+                    fill="currentColor"
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="fill-brand-dark/40 group-hover:fill-brand-dark/50"
+                    class="w-1.5 h-3 sm:w-auto sm:h-auto"
+                  >
+                    <path
+                      d="M8.96661 8.00002C8.96661 8.17779 8.93905 8.34446 8.88394 8.50002C8.82883 8.65557 8.73416 8.80002 8.59994 8.93335L2.46661 15.0667C2.22217 15.3111 1.91105 15.4333 1.53328 15.4333C1.1555 15.4333 0.844387 15.3111 0.599943 15.0667C0.355498 14.8222 0.233276 14.5111 0.233276 14.1333C0.233276 13.7556 0.355498 13.4445 0.599942 13.2L5.79994 8.00002L0.599942 2.80002C0.355498 2.55557 0.233276 2.24446 0.233276 1.86668C0.233276 1.4889 0.355497 1.17779 0.599942 0.933351C0.844386 0.688906 1.1555 0.566682 1.53327 0.566682C1.91105 0.566682 2.22216 0.688906 2.46661 0.93335L8.59994 7.06668C8.73328 7.20002 8.82794 7.34446 8.88394 7.50002C8.93994 7.65557 8.9675 7.82224 8.96661 8.00002Z"
+                    />
+                  </svg>
+                </button>
+              </div>
+              <!-- Price List -->
+              <ul
+                class="space-y-2 sm:space-y-4 text-brand-dark/60 text-sm sm:text-lg sm:p-5 xl:p-6"
+              >
+                <li class="h-22 flex items-center gap-2">
+                  <p>УЗИ</p>
+                  <div
+                    class="flex-1 border-b border-dashed border-brand-gray-100 pt-2"
+                  ></div>
+                  <p>от 200 ₽</p>
+                </li>
+                <li class="h-22 flex items-center gap-2">
+                  <p>ЭХО сердца</p>
+                  <div
+                    class="flex-1 border-b border-dashed border-brand-gray-100 pt-2"
+                  ></div>
+                  <p>от 300 ₽</p>
+                </li>
+                <li class="h-22 flex items-center gap-2">
+                  <p>Холтер</p>
+                  <div
+                    class="flex-1 border-b border-dashed border-brand-gray-100 pt-2"
+                  ></div>
+                  <p>от 250 ₽</p>
+                </li>
+                <li class="h-22 flex items-center gap-2">
+                  <p>ЭКГ</p>
+                  <div
+                    class="flex-1 border-b border-dashed border-brand-gray-100 pt-2"
+                  ></div>
+                  <p>от 200 ₽</p>
+                </li>
+                <li class="h-22 flex items-center gap-2">
+                  <p>ЭЭГ</p>
+                  <div
+                    class="flex-1 border-b border-dashed border-brand-gray-100 pt-2"
+                  ></div>
+                  <p>от 250 ₽</p>
+                </li>
+              </ul>
+            </div>
+            <!-- Bottom -->
+            <div class="grid grid-cols-2 gap-5 lg:gap-8">
+              <!-- Analyze -->
+              <div
+                class="flex flex-col justify-between space-y-6 sm:space-y-10 group bg-white rounded-3xl lg:rounded-base shadow-base p-4 lg:p-6"
+              >
+                <div class="flex items-center justify-between">
+                  <h4>Анализы</h4>
+                  <button>
+                    <svg
+                      width="32"
+                      height="32"
+                      viewBox="0 0 32 32"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                      class="group-hover:translate-x-3 transition-all duration-300"
+                    >
+                      <path
+                        d="M19.9666 16C19.9666 16.1778 19.9391 16.3445 19.8839 16.5C19.8288 16.6556 19.7342 16.8 19.5999 16.9333L13.4666 23.0667C13.2222 23.3111 12.9111 23.4333 12.5333 23.4333C12.1555 23.4333 11.8444 23.3111 11.5999 23.0667C11.3555 22.8222 11.2333 22.5111 11.2333 22.1333C11.2333 21.7556 11.3555 21.4445 11.5999 21.2L16.7999 16L11.5999 10.8C11.3555 10.5556 11.2333 10.2445 11.2333 9.86668C11.2333 9.4889 11.3555 9.17779 11.5999 8.93335C11.8444 8.68891 12.1555 8.56668 12.5333 8.56668C12.9111 8.56668 13.2222 8.68891 13.4666 8.93335L19.5999 15.0667C19.7333 15.2 19.8279 15.3445 19.8839 15.5C19.9399 15.6556 19.9675 15.8222 19.9666 16Z"
+                        fill="#343A47"
+                        fill-opacity="0.4"
+                      />
+                    </svg>
+                  </button>
+                </div>
+                <!-- Image -->
+                <div class="flex items-end justify-between">
+                  <p
+                    class="text-xs xs:text-sm xl:text-lg text-brand-dark/60 xs:leading-5"
+                  >
+                    Быстрые <br />
+                    результаты
+                  </p>
+
+                  <img
+                    src="./assets/images/img-analyze.png"
+                    alt="Analyze"
+                    class="w-12 h-12 md:w-20 md:h-20 xl:w-auto xl:h-auto"
+                  />
+                </div>
+              </div>
+              <!-- Discount -->
+              <div
+                class="space-y-10 group bg-gradient-to-r from-brand-orange-200 to-brand-orange-100 text-white rounded-3xl lg:rounded-base shadow-base p-4 lg:p-6"
+              >
+                <div class="flex items-center justify-between">
+                  <h4>Скидка 10%</h4>
+                  <button>
+                    <svg
+                      width="32"
+                      height="32"
+                      viewBox="0 0 32 32"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                      class="group-hover:translate-x-3 transition-all duration-300"
+                    >
+                      <path
+                        d="M19.9666 16C19.9666 16.1778 19.9391 16.3445 19.8839 16.5C19.8288 16.6556 19.7342 16.8 19.5999 16.9333L13.4666 23.0667C13.2222 23.3111 12.9111 23.4333 12.5333 23.4333C12.1555 23.4333 11.8444 23.3111 11.5999 23.0667C11.3555 22.8222 11.2333 22.5111 11.2333 22.1333C11.2333 21.7556 11.3555 21.4445 11.5999 21.2L16.7999 16L11.5999 10.8C11.3555 10.5556 11.2333 10.2445 11.2333 9.86668C11.2333 9.4889 11.3555 9.17779 11.5999 8.93335C11.8444 8.68891 12.1555 8.56668 12.5333 8.56668C12.9111 8.56668 13.2222 8.68891 13.4666 8.93335L19.5999 15.0667C19.7333 15.2 19.8279 15.3445 19.8839 15.5C19.9399 15.6556 19.9675 15.8222 19.9666 16Z"
+                        fill="white"
+                        fill-opacity="0.4"
+                      />
+                    </svg>
+                  </button>
+                </div>
+                <!-- Image -->
+                <div class="flex items-end justify-between">
+                  <p
+                    class="text-xs xs:text-sm xl:text-lg text-white/60 xs:leading-5"
+                  >
+                    На процедуру <br />
+                    «‎Эхо сердца‎»
+                  </p>
+
+                  <div
+                    class="w-12 h-12 md:w-20 md:h-20 xl:w-24 xl:h-24 shrink-0 grid place-content-center bg-brand-orange-300 rounded-2xl"
+                  >
+                    <img
+                      src="./assets/images/img-percent.png"
+                      alt="Dicsount"
+                      class="w-5 h-5 sm:w-9 sm:h-9"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
