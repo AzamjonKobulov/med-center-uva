@@ -43,15 +43,15 @@
 
 @layer base {
   body {
-    @apply font-cofo bg-brand-whitish;
+    @apply font-cofo bg-brand-whitish text-brand-dark;
   }
 
   section {
-    @apply pb-8 sm:pb-16 xl:pb-24;
+    @apply pb-12 sm:pb-16 xl:pb-24;
   }
 
   h2 {
-    @apply lg:text-5xl font-medium;
+    @apply text-2xl md:text-4xl lg:text-5xl text-center;
   }
 
   h3 {

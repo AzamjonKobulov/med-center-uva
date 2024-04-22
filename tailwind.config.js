@@ -44,6 +44,7 @@ module.exports = {
       borderRadius: {
         base: '2.5rem',
         20: '1.25rem',
+        32: '2rem',
         56: '3.5rem',
       },
       boxShadow: {
@@ -52,8 +53,15 @@ module.exports = {
       backgroundImage: {
         doctor:
           'linear-gradient(132.92deg, #238CB8 -0.91%, #6DB8D9 35.19%, #C0E9FF 65.59%, #A2D9F5 75.78%, #4FACD8 94.82%)',
+        direction:
+          'linear-gradient(90deg, rgba(255, 255, 255, 0) 16.74%, #FFFFFF 100%)',
+        'call-doctor':
+          'linear-gradient(105.04deg, #238CB8 14.03%, #74BCDD 28.1%, #C0E9FF 34.43%, #90CFEF 39.66%, #238CB8 62.96%)',
       },
       spacing: {
+        200: '12.5rem',
+      },
+      lineHeight: {
         22: '1.375rem',
       },
     },
