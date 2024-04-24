@@ -57,6 +57,8 @@ module.exports = {
           'linear-gradient(90deg, rgba(255, 255, 255, 0) 16.74%, #FFFFFF 100%)',
         'call-doctor':
           'linear-gradient(105.04deg, #238CB8 14.03%, #74BCDD 28.1%, #C0E9FF 34.43%, #90CFEF 39.66%, #238CB8 62.96%)',
+        'gradient-license':
+          'linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #FFFFFF 100%)',
       },
       spacing: {
         200: '12.5rem',

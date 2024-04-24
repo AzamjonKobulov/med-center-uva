@@ -55,7 +55,7 @@
   }
 
   h3 {
-    @apply lg:text-brand-3xl font-medium;
+    @apply text-xl sm:text-2xl lg:text-brand-3xl font-medium;
   }
 
   h4 {
