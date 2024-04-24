@@ -1351,8 +1351,179 @@
     </main>
 
     <!-- Footer -->
-    <footer id="footer">
-      <div class="max-w-base mx-auto px-5"></div>
+    <footer id="footer" class="bg-white border-t border-brand-whitish pt-8">
+      <div class="max-w-base mx-auto space-y-20 text-brand-dark/60 px-5">
+        <!-- Top -->
+        <div class="space-y-8">
+          <div class="flex justify-between flex-wrap md:flex-nowrap gap-5">
+            <!-- Logo -->
+            <div class="w-36 h-10 lg:w-40 lg:h-12">
+              <img
+                src="./assets/images/logo.png"
+                alt="Logo"
+                class="w-full h-full"
+              />
+            </div>
+
+            <!-- Text -->
+            <div class="max-w-44 lg:max-w-[16.25rem] hidden lg:flex gap-3">
+              <svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                class="shrink-0"
+              >
+                <path
+                  d="M12 2C17.523 2 22 6.477 22 12C22 17.523 17.523 22 12 22C6.477 22 2 17.523 2 12C2 6.477 6.477 2 12 2ZM11.99 10H11C10.7451 10.0003 10.5 10.0979 10.3146 10.2728C10.1293 10.4478 10.0178 10.687 10.0028 10.9414C9.98789 11.1958 10.0707 11.4464 10.2343 11.6418C10.3979 11.8373 10.6299 11.9629 10.883 11.993L11 12V16.99C11 17.51 11.394 17.94 11.9 17.994L12.01 18H12.5C12.7103 18 12.9153 17.9337 13.0857 17.8105C13.2562 17.6873 13.3835 17.5135 13.4495 17.3139C13.5155 17.1142 13.5169 16.8988 13.4534 16.6982C13.3899 16.4977 13.2649 16.3223 13.096 16.197L13 16.134V11.01C13 10.49 12.606 10.06 12.1 10.006L11.99 10ZM12 7C11.7348 7 11.4804 7.10536 11.2929 7.29289C11.1054 7.48043 11 7.73478 11 8C11 8.26522 11.1054 8.51957 11.2929 8.70711C11.4804 8.89464 11.7348 9 12 9C12.2652 9 12.5196 8.89464 12.7071 8.70711C12.8946 8.51957 13 8.26522 13 8C13 7.73478 12.8946 7.48043 12.7071 7.29289C12.5196 7.10536 12.2652 7 12 7Z"
+                  fill="#343A47"
+                  fill-opacity="0.2"
+                />
+              </svg>
+              <p class="text-xs lg:text-base">
+                Имеются противопоказания, необходима консультация специалиста
+              </p>
+            </div>
+
+            <!-- Contacts on Mobile -->
+            <div
+              class="h-fit flex sm:hidden flex-col-reverse xl:flex-row gap-5 xl:gap-8"
+            >
+              <!-- Phone -->
+              <div class="flex flex-col xl:gap-4">
+                <a
+                  href="tel:"
+                  class="font-medium text-sm xl:text-base text-brand-dark hover:text-brand-dark/60 transition-all duration-300"
+                >
+                  8 (950) 163-53-43
+                </a>
+                <p class="text-brand-xs xl:text-xs text-brand-dark/60">
+                  пн-пт: с 8.00 до 18.00 <br class="hidden xl:block" />
+                  сб: с 9.00 до 14.00
+                </p>
+              </div>
+              <!-- Button -->
+              <button
+                class="h-8 lg:h-10 bg-gradient-to-r from-brand-orange-200 to-brand-orange-100 font-medium text-white text-xs sm:text-sm rounded-lg lg:rounded-xl hover:bg-gradient-to-l transition-all duration-300 px-3 sm:px-4"
+              >
+                Заказать звонок
+              </button>
+            </div>
+
+            <!-- Links -->
+            <div
+              class="flex items-center gap-20 xs:gap-10 md:gap-16 lg:gap-10 font-medium sm:-mt-6"
+            >
+              <ul>
+                <li>
+                  <a
+                    href="#"
+                    class="hover:text-brand-dark transition-all duration-300"
+                    >Главная</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    class="hover:text-brand-dark transition-all duration-300"
+                    >Направления</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    class="hover:text-brand-dark transition-all duration-300"
+                    >Цены</a
+                  >
+                </li>
+              </ul>
+              <ul>
+                <li>
+                  <a
+                    href="#"
+                    class="hover:text-brand-dark transition-all duration-300"
+                    >Лицензии</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    class="hover:text-brand-dark transition-all duration-300"
+                    >Документы</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    class="hover:text-brand-dark transition-all duration-300"
+                    >Контакты</a
+                  >
+                </li>
+              </ul>
+            </div>
+
+            <!-- Contacts -->
+            <div
+              class="h-fit hidden sm:flex flex-col-reverse xl:flex-row gap-5 xl:gap-8"
+            >
+              <!-- Phone -->
+              <div class="flex flex-col xl:gap-4">
+                <a
+                  href="tel:"
+                  class="font-medium text-sm xl:text-base text-brand-dark hover:text-brand-dark/60 transition-all duration-300"
+                >
+                  8 (950) 163-53-43
+                </a>
+                <p class="text-brand-xs xl:text-xs text-brand-dark/60">
+                  пн-пт: с 8.00 до 18.00 <br class="hidden xl:block" />
+                  сб: с 9.00 до 14.00
+                </p>
+              </div>
+              <!-- Button -->
+              <button
+                class="h-8 lg:h-10 bg-gradient-to-r from-brand-orange-200 to-brand-orange-100 font-medium text-white text-xs sm:text-sm rounded-lg lg:rounded-xl hover:bg-gradient-to-l transition-all duration-300 px-3 sm:px-4"
+              >
+                Заказать звонок
+              </button>
+            </div>
+          </div>
+          <!-- Text on Mobile -->
+          <div class="flex lg:hidden gap-3">
+            <svg
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              class="shrink-0"
+            >
+              <path
+                d="M12 2C17.523 2 22 6.477 22 12C22 17.523 17.523 22 12 22C6.477 22 2 17.523 2 12C2 6.477 6.477 2 12 2ZM11.99 10H11C10.7451 10.0003 10.5 10.0979 10.3146 10.2728C10.1293 10.4478 10.0178 10.687 10.0028 10.9414C9.98789 11.1958 10.0707 11.4464 10.2343 11.6418C10.3979 11.8373 10.6299 11.9629 10.883 11.993L11 12V16.99C11 17.51 11.394 17.94 11.9 17.994L12.01 18H12.5C12.7103 18 12.9153 17.9337 13.0857 17.8105C13.2562 17.6873 13.3835 17.5135 13.4495 17.3139C13.5155 17.1142 13.5169 16.8988 13.4534 16.6982C13.3899 16.4977 13.2649 16.3223 13.096 16.197L13 16.134V11.01C13 10.49 12.606 10.06 12.1 10.006L11.99 10ZM12 7C11.7348 7 11.4804 7.10536 11.2929 7.29289C11.1054 7.48043 11 7.73478 11 8C11 8.26522 11.1054 8.51957 11.2929 8.70711C11.4804 8.89464 11.7348 9 12 9C12.2652 9 12.5196 8.89464 12.7071 8.70711C12.8946 8.51957 13 8.26522 13 8C13 7.73478 12.8946 7.48043 12.7071 7.29289C12.5196 7.10536 12.2652 7 12 7Z"
+                fill="#343A47"
+                fill-opacity="0.2"
+              />
+            </svg>
+            <p class="text-xs lg:text-base">
+              Имеются противопоказания, необходима консультация специалиста
+            </p>
+          </div>
+        </div>
+
+        <!-- Bottom -->
+        <div
+          class="flex flex-col-reverse xs:flex-row xs:items-center justify-between gap-2.5 pb-6"
+        >
+          <p class="text-sm md:text-base">
+            2024 © ООО «Лабораторные технологии»
+          </p>
+          <img
+            src="./assets/images/logo-kovalchuk.svg"
+            alt="Logo Kovalchuk"
+            class="w-[7.5rem] h-9"
+          />
+        </div>
+      </div>
     </footer>
   </body>
 </html>
