@@ -8,12 +8,14 @@
   </head>
   <body>
     <!-- HEADER -->
-    <header class="bg-white rounded-b-2xl lg:rounded-b-base shadow-base">
+    <header
+      class="header sticky top-0 z-50 h-fit bg-white rounded-b-2xl lg:rounded-b-base shadow-base transition-all duration-300"
+    >
       <!-- Navbar -->
       <nav>
         <!-- Top -->
         <div
-          class="h-7 lg:h-9 flex items-center justify-center gap-1 text-xs lg:text-sm font-medium text-brand-orange border-b border-brand-light-gray"
+          class="nav-top h-9 flex items-center justify-center gap-1 text-sm font-medium text-brand-orange border-b border-brand-light-gray transition-all duration-300"
         >
           <p>График работы клиники 1-9 мая</p>
           <svg
@@ -1525,5 +1527,7 @@
         </div>
       </div>
     </footer>
+
+    <script src="./js/script.js"></script>
   </body>
 </html>
