@@ -1,5 +1,3 @@
-// Mobile Menu
-
 // Scroll Nav
 document.addEventListener('scroll', function () {
   const navTop = document.querySelector('.nav-top');
@@ -40,7 +38,7 @@ const mobileMenuBtns = document.querySelectorAll('#mobileMenuBtn');
 const mobileMenu = document.querySelector('#mobileMenu');
 
 const toggleMobileMenu = () => {
-  mobileMenu.classList.toggle('-translate-y-full');
+  mobileMenu.classList.toggle('translate-y-full');
   document.body.classList.toggle('overflow-hidden');
 };
 
