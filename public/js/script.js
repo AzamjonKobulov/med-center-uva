@@ -1,3 +1,5 @@
+// Mobile Menu
+
 // Scroll Nav
 document.addEventListener('scroll', function () {
   const navTop = document.querySelector('.nav-top');
@@ -31,4 +33,21 @@ notifications.addEventListener('click', (event) => {
   if (event.target === notifications) {
     toggleNotifications();
   }
+});
+
+// Mobile Menu
+const mobileMenuBtns = document.querySelectorAll('#mobileMenuBtn');
+const mobileMenu = document.querySelector('#mobileMenu');
+
+const toggleMobileMenu = () => {
+  mobileMenu.classList.toggle('-translate-y-full');
+  document.body.classList.toggle('overflow-hidden');
+};
+
+mobileMenuBtns.forEach((btn) => {
+  btn.addEventListener('click', toggleMobileMenu);
+});
+
+document.querySelectorAll('#mobileMenu ul a').forEach((link) => {
+  link.addEventListener('click', toggleMobileMenu);
 });

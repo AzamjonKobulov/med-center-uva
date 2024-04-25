@@ -11,6 +11,86 @@
     <header
       class="header sticky top-0 z-50 h-fit bg-white rounded-b-2xl lg:rounded-b-base shadow-base transition-all duration-300"
     >
+      <!-- Mobile Menu -->
+      <div
+        id="mobileMenu"
+        class="fixed inset-0 z-[70] bg-brand-whitish -translate-y-full transition-all duration-300"
+      >
+        <div class="flex items-center justify-between bg-white py-3 px-4">
+          <!-- Logo -->
+          <div class="w-36 h-10 lg:w-40 lg:h-12">
+            <img
+              src="./assets/images/logo.png"
+              alt="Logo"
+              class="w-full h-full"
+            />
+          </div>
+          <button id="mobileMenuBtn">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="w-6 h-6"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M6 18 18 6M6 6l12 12"
+              />
+            </svg>
+          </button>
+        </div>
+        <div class="w-full h-full relative grid place-content-center">
+          <ul class="font-medium text-2xl text-center space-y-5 -mt-20">
+            <li>
+              <a
+                href="#"
+                class="hover:text-brand-dark transition-all duration-300"
+                >Главная</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                class="hover:text-brand-dark transition-all duration-300"
+                >Направления</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                class="hover:text-brand-dark transition-all duration-300"
+                >Цены</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                class="hover:text-brand-dark transition-all duration-300"
+                >Лицензии</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                class="hover:text-brand-dark transition-all duration-300"
+                >Контакты</a
+              >
+            </li>
+            <li class="text-xl pt-10">
+              <a href="tel:" class="font-medium transition-all duration-300">
+                8 (950) 163-53-43
+              </a>
+              <p class="text-sm mt-5">
+                пн-пт: с 8.00 до 18.00 <br />
+                сб: с 9.00 до 14.00
+              </p>
+            </li>
+          </ul>
+        </div>
+      </div>
       <!-- Navbar -->
       <nav>
         <!-- Top -->
@@ -151,7 +231,7 @@
               Заказать звонок
             </button>
             <!-- Mobile Menu Button -->
-            <button class="lg:hidden">
+            <button class="lg:hidden" id="mobileMenuBtn">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
