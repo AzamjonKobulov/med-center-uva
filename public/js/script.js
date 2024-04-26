@@ -82,6 +82,7 @@ var swiper = new Swiper('.pricing__slider', {
   centeredSlides: true,
   spaceBetween: 30,
   loop: true,
+  allowTouchMove: false,
   speed: 300,
   pagination: {
     el: '.swiper-pagination',
