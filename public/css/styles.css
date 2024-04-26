@@ -1550,6 +1550,10 @@ video {
     border-top-right-radius: 2rem;
   }
 
+  .xs\:p-7 {
+    padding: 1.75rem;
+  }
+
   .xs\:px-6 {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
