@@ -49,3 +49,42 @@ mobileMenuBtns.forEach((btn) => {
 document.querySelectorAll('#mobileMenu ul a').forEach((link) => {
   link.addEventListener('click', toggleMobileMenu);
 });
+
+// Get the buttons container
+const buttonsContainer = document.getElementById('buttonsContainer');
+
+// Get the navigation button
+const goRightButton = document.getElementById('goRight');
+
+// Add click event listener to the navigation button
+goRightButton.addEventListener('click', function () {
+  // Calculate the amount to scroll
+  const scrollAmount = 100; // Adjust this value as needed
+  const scrollDuration = 300; // Duration of the scroll animation in milliseconds
+
+  // Get the initial scroll position
+  const startScroll = buttonsContainer.scrollLeft;
+
+  // Calculate the target scroll position
+  const targetScroll = startScroll + scrollAmount;
+
+  // Define the start time of the scroll animation
+  const startTime = performance.now();
+
+  // Define the scroll animation function
+  function scrollAnimation(currentTime) {
+    const elapsedTime = currentTime - startTime;
+    const scrollProgress = Math.min(elapsedTime / scrollDuration, 1);
+    const easedProgress = scrollProgress * (2 - scrollProgress);
+
+    buttonsContainer.scrollLeft =
+      startScroll + (targetScroll - startScroll) * easedProgress;
+
+    if (scrollProgress < 1) {
+      requestAnimationFrame(scrollAnimation);
+    }
+  }
+
+  // Start the scroll animation
+  requestAnimationFrame(scrollAnimation);
+});

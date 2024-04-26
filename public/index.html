@@ -12,7 +12,7 @@
       class="header sticky top-0 z-50 bg-white rounded-b-2xl lg:rounded-b-base shadow-base transition-all duration-300"
     >
       <!-- Navbar -->
-      <nav>
+      <nav class="transition-all duration-300">
         <!-- Top -->
         <div
           class="nav-top h-9 relative z-[60] grid place-content-center text-sm font-medium text-brand-orange border-b border-brand-light-gray transition-all duration-300"
@@ -609,7 +609,7 @@
               </p>
             </div>
             <!-- Problems -->
-            <div class="relative overflow-hidden">
+            <div id="buttonsContainer" class="no-scroll overflow-auto">
               <div
                 class="min-w-max flex items-center gap-1.5 lg:gap-2 text-xs md:text-sm lg:text-base flex-nowrap"
               >
@@ -654,14 +654,15 @@
                   Аллергия и сыпь
                 </button>
                 <button
-                  class="h-8 sm:h-10 bg-brand-whitish font-medium rounded-lg sm:rounded-xl hover:bg-brand-sky hover:text-white transition-all duration-300 mr-4 lg:mr-6 xl:mr-8 px-2 sm:px-3 lg:px-4"
+                  class="h-8 sm:h-10 bg-brand-whitish font-medium rounded-lg sm:rounded-xl hover:bg-brand-sky hover:text-white transition-all duration-300 mr-28 lg:mr-36 xl:mr-40 px-2 sm:px-3 lg:px-4"
                 >
                   Аллергия и сыпь
                 </button>
               </div>
               <!-- Navigating Button -->
               <button
-                class="hidden w-9 h-9 sm:w-12 sm:h-12 left-full absolute z-10 right-4 lg:right-6 xl:right-8 top-0 group grid place-content-center bg-white hover:bg-brand-orange-100 hover:border-brand-orange-100 border border-brand-dark/20 rounded-xl sm:rounded-2xl transition-all duration-300"
+                id="goRight"
+                class="w-9 h-9 sm:w-12 sm:h-12 shrink-0 absolute right-4 lg:right-6 xl:right-8 bottom-5 xl:bottom-7 z-20 group grid place-content-center bg-white hover:bg-brand-whitish 100 border border-brand-dark/20 rounded-xl sm:rounded-2xl transition-all duration-300"
               >
                 <svg
                   width="9"
@@ -669,7 +670,7 @@
                   viewBox="0 0 9 16"
                   fill="currentColor"
                   xmlns="http://www.w3.org/2000/svg"
-                  class="fill-brand-dark/40 group-hover:fill-black transition-all duration-300"
+                  class="transition-all duration-300"
                   class="w-1.5 h-3 sm:w-auto sm:h-auto"
                 >
                   <path

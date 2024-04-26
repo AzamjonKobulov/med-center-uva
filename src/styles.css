@@ -62,3 +62,7 @@
     @apply text-lg sm:text-xl md:text-2xl font-medium lg:leading-7;
   }
 }
+
+.no-scroll::-webkit-scrollbar {
+  @apply h-0;
+}
