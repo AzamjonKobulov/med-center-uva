@@ -50,44 +50,97 @@ document.querySelectorAll('#mobileMenu ul a').forEach((link) => {
   link.addEventListener('click', toggleMobileMenu);
 });
 
-// Get the buttons container
+// Buttons Container
 const buttonsContainer = document.getElementById('buttonsContainer');
-
-// Get the navigation button
 const goRightButton = document.getElementById('goRight');
 
-// Get the arrow icon
-const arrowIcon = document.getElementById('arrowIcon');
-
-// Add click event listener to the navigation button
 goRightButton.addEventListener('click', function () {
-  // Toggle rotation class on arrow icon
-  arrowIcon.classList.toggle('rotate-180');
+  // Calculate the amount to scroll
+  const scrollAmount = 100; // Adjust this value as needed
 
-  // If the container is scrolled all the way to the right
+  // Scroll the container to the right smoothly
+  buttonsContainer.scrollTo({
+    left: buttonsContainer.scrollLeft + scrollAmount,
+    behavior: 'smooth', // This makes the scrolling smooth
+  });
+});
+
+// Add scroll event listener to the buttons container
+goRightButton.addEventListener('scroll', function () {
+  // Check if scrolling has reached the end
   if (
     buttonsContainer.scrollLeft ===
     buttonsContainer.scrollWidth - buttonsContainer.clientWidth
   ) {
-    // Scroll to the start
+    // Move the goRightButton to the start
     buttonsContainer.scrollTo({ left: 0, behavior: 'smooth' });
-  } else {
-    // Otherwise, scroll to the right
-    buttonsContainer.scrollBy({ left: 100, behavior: 'smooth' });
   }
 });
 
-// Add event listener for scroll end
-buttonsContainer.addEventListener('scroll', function () {
-  // If the container is scrolled all the way to the right
-  if (
-    buttonsContainer.scrollLeft ===
-    buttonsContainer.scrollWidth - buttonsContainer.clientWidth
-  ) {
-    // Add rotation class to arrow icon
-    arrowIcon.classList.add('rotate-180');
-  } else {
-    // Remove rotation class from arrow icon
-    arrowIcon.classList.remove('rotate-180');
-  }
+var swiper = new Swiper('.pricing__slider', {
+  slidesPerView: 1.4,
+  centeredSlides: true,
+  spaceBetween: 30,
+  loop: true,
+  speed: 300,
+  pagination: {
+    el: '.swiper-pagination',
+    clickable: true,
+  },
+  breakpoints: {
+    0: {
+      slidesPerView: 1.2,
+      spaceBetween: 16,
+    },
+    1024: {
+      slidesPerView: 1.4,
+      spaceBetween: 32,
+    },
+  },
+});
+
+var paginationButtons = document.querySelectorAll('.tab-button');
+paginationButtons.forEach(function (button) {
+  button.addEventListener('click', function () {
+    var slideIndex = parseInt(this.getAttribute('data-slide'));
+    swiper.slideTo(slideIndex);
+
+    // Move slides dynamically
+    var slides = document.querySelectorAll('.swiper-slide');
+    slides.forEach(function (slide, index) {
+      if (index < slideIndex) {
+        slide.style.order = index - slideIndex;
+      } else if (index > slideIndex) {
+        slide.style.order = index - slideIndex;
+      } else {
+        slide.style.order = 0;
+      }
+    });
+  });
+});
+
+swiper.on('slideChange', function () {
+  var activeIndex = swiper.activeIndex;
+  paginationButtons.forEach(function (button, index) {
+    if (index === activeIndex) {
+      button.classList.add('active-tab');
+    } else {
+      button.classList.remove('active-tab');
+    }
+  });
+});
+
+// Handle click on tab content
+var tabContents = document.querySelectorAll('.swiper-slide');
+tabContents.forEach(function (tab, index) {
+  tab.addEventListener('click', function () {
+    swiper.slideTo(index);
+    paginationButtons.forEach(function (button, btnIndex) {
+      if (index === btnIndex) {
+        button.classList.add('active-tab');
+      } else {
+        button.classList.remove('active-tab');
+      }
+    });
+  });
 });

@@ -64,6 +64,8 @@ module.exports = {
         rule1:
           'linear-gradient(131.47deg, #238CB8 22.19%, #6DB8D9 42.13%, #C0E9FF 70.16%, #A2D9F5 82.78%, #4FACD8 94.69%)',
         rule2: 'linear-gradient(273.88deg, #FFAB42 8.58%, #FF8F0D 83.58%)',
+        'inactive-price':
+          'linear-gradient(270deg, rgba(255, 255, 255, 0) 77.27%, rgba(255, 255, 255, 0.6) 100%)',
       },
       spacing: {
         200: '12.5rem',

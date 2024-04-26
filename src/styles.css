@@ -66,3 +66,25 @@
 .no-scroll::-webkit-scrollbar {
   @apply h-0;
 }
+
+.pricing__slider .swiper-wrapper {
+  @apply !items-center;
+}
+
+.active-tab {
+  @apply bg-gradient-to-r from-brand-orange-200 to-brand-orange-100 text-white;
+}
+
+/* Styling for non-active tab content */
+.swiper-slide:not(.swiper-slide-active) > div {
+  @apply relative after:absolute after:inset-0 after:bg-brand-whitish/40 after:!z-10 overflow-hidden mt-[20%];
+}
+
+.swiper-slide:not(.swiper-slide-active) p,
+.swiper-slide:not(.swiper-slide-active) h3 {
+  @apply !text-white;
+}
+
+.swiper-slide:not(.swiper-slide-active) {
+  @apply border-none;
+}

@@ -3,6 +3,11 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Link Swiper's CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
     <link rel="stylesheet" href="./css/styles.css" />
     <title>Med Center Uva</title>
   </head>
@@ -345,35 +350,35 @@
               <ul
                 class="space-y-2 sm:space-y-4 text-brand-dark/60 text-sm sm:text-lg sm:p-5 xl:p-6"
               >
-                <li class="h-22 flex items-center gap-2">
+                <li class="h-22 flex items-end gap-2">
                   <p>УЗИ</p>
                   <div
                     class="flex-1 border-b border-dashed border-brand-gray-100 pt-2"
                   ></div>
                   <p>от 200 ₽</p>
                 </li>
-                <li class="h-22 flex items-center gap-2">
+                <li class="h-22 flex items-end gap-2">
                   <p>ЭХО сердца</p>
                   <div
                     class="flex-1 border-b border-dashed border-brand-gray-100 pt-2"
                   ></div>
                   <p>от 300 ₽</p>
                 </li>
-                <li class="h-22 flex items-center gap-2">
+                <li class="h-22 flex items-end gap-2">
                   <p>Холтер</p>
                   <div
                     class="flex-1 border-b border-dashed border-brand-gray-100 pt-2"
                   ></div>
                   <p>от 250 ₽</p>
                 </li>
-                <li class="h-22 flex items-center gap-2">
+                <li class="h-22 flex items-end gap-2">
                   <p>ЭКГ</p>
                   <div
                     class="flex-1 border-b border-dashed border-brand-gray-100 pt-2"
                   ></div>
                   <p>от 200 ₽</p>
                 </li>
-                <li class="h-22 flex items-center gap-2">
+                <li class="h-22 flex items-end gap-2">
                   <p>ЭЭГ</p>
                   <div
                     class="flex-1 border-b border-dashed border-brand-gray-100 pt-2"
@@ -598,8 +603,11 @@
           >
             <!-- Texts -->
             <div class="flex justify-between px-5 lg:px-6 xl:px-8">
-              <h3 class="text-xl sm:text-2xl lg:text-3xl xl:text-brand-3xl">
-                Что вас беспокоит?
+              <h3
+                class="text-xl sm:text-2xl lg:text-3xl xl:text-brand-3xl leading-5 xs:leading-normal"
+              >
+                Что вас <br class="xs:hidden" />
+                беспокоит?
               </h3>
               <p
                 class="relative z-10 text-xs sm:text-sm md:text-lg text-brand-dark/60 text-end lg:leading-22"
@@ -981,10 +989,10 @@
 
       <!-- Pricing -->
       <section id="pricing">
-        <div class="space-y-5 xl:space-y-8 2xl:space-y-12">
+        <div class="relative space-y-5 xl:space-y-8 2xl:space-y-12">
           <h2>Цены на услуги</h2>
 
-          <!-- Prices -->
+          <!-- Prices Tabs -->
           <div class="space-y-6 lg:space-y-8">
             <!-- Tabs -->
             <div
@@ -995,223 +1003,637 @@
               >
                 <!-- Tab 1 -->
                 <button
-                  class="h-10 sm:h-12 xl:h-14 bg-gradient-to-r from-brand-orange-200 to-brand-orange-100 font-medium text-white rounded-lg xs:rounded-xl md:rounded-2xl hover:bg-gradient-to-l transition-all duration-300 px-4 sm:px-5 md:px-6"
+                  id="tab1"
+                  data-slide="0"
+                  class="tab-button h-10 sm:h-12 xl:h-14 font-medium rounded-lg xs:rounded-xl md:rounded-2xl hover:bg-gradient-to-l transition-all duration-300 px-4 sm:px-5 md:px-6 active"
                 >
                   Услуги врачей
                 </button>
                 <!-- Tab 2 -->
                 <button
-                  class="h-10 sm:h-12 xl:h-14 font-medium rounded-lg xs:rounded-xl md:rounded-2xl hover:bg-brand-whitish transition-all duration-300 px-4 sm:px-5 md:px-6"
+                  id="tab2"
+                  data-slide="1"
+                  class="tab-button h-10 sm:h-12 xl:h-14 font-medium rounded-lg xs:rounded-xl md:rounded-2xl hover:bg-brand-whitish transition-all duration-300 px-4 sm:px-5 md:px-6"
                 >
                   Диагностика
                 </button>
                 <!-- Tab 3 -->
                 <button
-                  class="h-10 sm:h-12 xl:h-14 font-medium rounded-lg xs:rounded-xl md:rounded-2xl hover:bg-brand-whitish transition-all duration-300 px-4 sm:px-5 md:px-6"
+                  id="tab3"
+                  data-slide="2"
+                  class="tab-button h-10 sm:h-12 xl:h-14 font-medium rounded-lg xs:rounded-xl md:rounded-2xl hover:bg-brand-whitish transition-all duration-300 px-4 sm:px-5 md:px-6"
                 >
                   Анализы
                 </button>
               </div>
             </div>
 
-            <!-- Price List -->
-            <div class="flex items-center justify-center gap-5 lg:gap-8">
-              <div
-                class="w-4/5 sm:w-[68%] space-y-10 lg:space-y-[3.25rem] bg-white rounded-3xl md:rounded-32 lg:rounded-56 shadow-base p-7 lg:p-10"
-              >
-                <div class="space-y-6">
-                  <h3>Гинеколог</h3>
-                  <ul
-                    class="space-y-2 sm:space-y-3 text-brand-dark/60 text-xs sm:text-sm md:text-base lg:text-lg lg:px-5 xl:px-6"
+            <!-- Swiper -->
+            <div class="swiper pricing__slider">
+              <div class="swiper-wrapper">
+                <!-- Price 1 -->
+                <div class="swiper-slide">
+                  <div
+                    class="space-y-10 lg:space-y-[3.25rem] bg-white rounded-3xl md:rounded-32 lg:rounded-56 shadow-base transition-all duration-300 p-7 lg:p-10"
                   >
-                    <li class="h-22 flex items-center gap-2">
-                      <p>Первичный прием гинеколога</p>
-                      <div
-                        class="flex-1 border-b border-dashed border-brand-gray-100 pt-2"
-                      ></div>
-                      <p>750 ₽</p>
-                    </li>
-                    <li class="h-22 flex items-center gap-2">
-                      <p>Повторный прием гинеколога</p>
-                      <div
-                        class="flex-1 border-b border-dashed border-brand-gray-100 pt-2"
-                      ></div>
-                      <p>600 ₽</p>
-                    </li>
-                    <li class="h-22 flex items-center gap-2">
-                      <p>Консультация по результатам анализов</p>
-                      <div
-                        class="flex-1 border-b border-dashed border-brand-gray-100 pt-2"
-                      ></div>
-                      <p>400 ₽</p>
-                    </li>
-                    <li class="h-22 flex items-center gap-2">
-                      <p>Кольпоскопия простая</p>
-                      <div
-                        class="flex-1 border-b border-dashed border-brand-gray-100 pt-2"
-                      ></div>
-                      <p>600 ₽</p>
-                    </li>
-                    <li class="h-22 flex items-center gap-2">
-                      <p>
-                        Забор материала на ПЦР диагностику,посев, онкоцитологию
-                      </p>
-                      <div
-                        class="flex-1 border-b border-dashed border-brand-gray-100 pt-2"
-                      ></div>
-                      <p>100 ₽</p>
-                    </li>
-                    <li class="h-22 flex items-center gap-2">
-                      <p>Удаление ВМС простое</p>
-                      <div
-                        class="flex-1 border-b border-dashed border-brand-gray-100 pt-2"
-                      ></div>
-                      <p>400 ₽</p>
-                    </li>
-                    <li class="h-22 flex items-center gap-2">
-                      <p>Удаление ВМС крючком</p>
-                      <div
-                        class="flex-1 border-b border-dashed border-brand-gray-100 pt-2"
-                      ></div>
-                      <p>1 200 ₽</p>
-                    </li>
-                    <li class="h-22 flex items-center gap-2">
-                      <p>Введение ВМС</p>
-                      <div
-                        class="flex-1 border-b border-dashed border-brand-gray-100 pt-2"
-                      ></div>
-                      <p>1 000 ₽</p>
-                    </li>
-                    <li class="h-22 flex items-center gap-2">
-                      <p>Биопсия ш/матки</p>
-                      <div
-                        class="flex-1 border-b border-dashed border-brand-gray-100 pt-2"
-                      ></div>
-                      <p>1 500 ₽</p>
-                    </li>
-                    <li class="h-22 flex items-center gap-2">
-                      <p>Биопсия ш/матки расширенная</p>
-                      <div
-                        class="flex-1 border-b border-dashed border-brand-gray-100 pt-2"
-                      ></div>
-                      <p>2 200 ₽</p>
-                    </li>
-                    <li class="h-22 flex items-center gap-2">
-                      <p>Радиоволновая хирургия (рвх) ш/матки</p>
-                      <div
-                        class="flex-1 border-b border-dashed border-brand-gray-100 pt-2"
-                      ></div>
-                      <p>1 500 ₽</p>
-                    </li>
-                    <li class="h-22 flex items-center gap-2">
-                      <p>Удаление полипа с помощью рвх</p>
-                      <div
-                        class="flex-1 border-b border-dashed border-brand-gray-100 pt-2"
-                      ></div>
-                      <p>1 500 ₽</p>
-                    </li>
-                    <li class="h-22 flex items-center gap-2">
-                      <p>Эксцизия ш/матки</p>
-                      <div
-                        class="flex-1 border-b border-dashed border-brand-gray-100 pt-2"
-                      ></div>
-                      <p>2 000 ₽</p>
-                    </li>
-                    <li class="h-22 flex items-center gap-2">
-                      <p>Вскрытие наботовой кисты</p>
-                      <div
-                        class="flex-1 border-b border-dashed border-brand-gray-100 pt-2"
-                      ></div>
-                      <p>500 ₽</p>
-                    </li>
-                    <li class="h-22 flex items-end gap-2">
-                      <p>
-                        Гистологическое исследование материала из цервик. канала
-                        и/или полости матки (соскобы, аспираты)
-                      </p>
-                      <div
-                        class="flex-1 border-b border-dashed border-brand-gray-100 pt-2"
-                      ></div>
-                      <p class="whitespace-nowrap">1 200 ₽</p>
-                    </li>
-                  </ul>
-                </div>
-                <div class="space-y-6">
-                  <h3>Эндокринолог</h3>
-                  <ul
-                    class="space-y-2 sm:space-y-3 text-brand-dark/60 text-xs sm:text-sm md:text-base lg:text-lg lg:px-5 xl:px-6"
-                  >
-                    <li class="h-22 flex items-center gap-2">
-                      <p>Первичный прием эндокринолога</p>
-                      <div
-                        class="flex-1 border-b border-dashed border-brand-gray-100 pt-2"
-                      ></div>
-                      <p>750 ₽</p>
-                    </li>
-                    <li class="h-22 flex items-center gap-2">
-                      <p>Повторный прием эндокринолога</p>
-                      <div
-                        class="flex-1 border-b border-dashed border-brand-gray-100 pt-2"
-                      ></div>
-                      <p>600 ₽</p>
-                    </li>
-                    <li class="h-22 flex items-center gap-2">
-                      <p>Консультация по результатам анализов</p>
-                      <div
-                        class="flex-1 border-b border-dashed border-brand-gray-100 pt-2"
-                      ></div>
-                      <p>400 ₽</p>
-                    </li>
-                    <li class="h-22 flex items-center gap-2">
-                      <p>Анализ крови на сахар из пальца</p>
-                      <div
-                        class="flex-1 border-b border-dashed border-brand-gray-100 pt-2"
-                      ></div>
-                      <p>150 ₽</p>
-                    </li>
-                  </ul>
-                </div>
-                <div class="space-y-6">
-                  <h3>Мануальный терапевт диагностика</h3>
-                  <ul
-                    class="space-y-2 sm:space-y-3 text-brand-dark/60 text-xs sm:text-sm md:text-base lg:text-lg lg:px-5 xl:px-6"
-                  >
-                    <li class="h-22 flex items-center gap-2">
-                      <p>Диагностический осмотр</p>
-                      <div
-                        class="flex-1 border-b border-dashed border-brand-gray-100 pt-2"
-                      ></div>
-                      <p>800 ₽</p>
-                    </li>
-                    <li class="h-22 flex items-center gap-2">
-                      <p>Сеанс мануальной терапии</p>
-                      <div
-                        class="flex-1 border-b border-dashed border-brand-gray-100 pt-2"
-                      ></div>
-                      <p>1 500 ₽</p>
-                    </li>
-                    <li class="h-22 flex items-center gap-2">
-                      <p>Повторный сеанс мануальной терапии</p>
-                      <div
-                        class="flex-1 border-b border-dashed border-brand-gray-100 pt-2"
-                      ></div>
-                      <p>1 200 ₽</p>
-                    </li>
-                    <li class="h-22 flex items-center gap-2">
-                      <p>Внутримышечная инъекция</p>
-                      <div
-                        class="flex-1 border-b border-dashed border-brand-gray-100 pt-2"
-                      ></div>
-                      <p>300 ₽</p>
-                    </li>
-                  </ul>
-                </div>
+                    <div class="space-y-6">
+                      <h3>Гинеколог</h3>
+                      <ul
+                        class="space-y-2 sm:space-y-3 text-brand-dark/60 text-xs sm:text-sm md:text-base lg:text-lg lg:px-5 xl:px-6"
+                      >
+                        <li class="h-22 flex items-end gap-2">
+                          <p>Первичный прием гинеколога</p>
+                          <div
+                            class="flex-1 border-b border-dashed border-brand-gray-100 pt-2"
+                          ></div>
+                          <p class="whitespace-nowrap">750 ₽</p>
+                        </li>
+                        <li class="h-22 flex items-end gap-2">
+                          <p>Повторный прием гинеколога</p>
+                          <div
+                            class="flex-1 border-b border-dashed border-brand-gray-100 pt-2"
+                          ></div>
+                          <p class="whitespace-nowrap">600 ₽</p>
+                        </li>
+                        <li class="h-22 flex items-end gap-2">
+                          <p>Консультация по результатам анализов</p>
+                          <div
+                            class="flex-1 border-b border-dashed border-brand-gray-100 pt-2"
+                          ></div>
+                          <p class="whitespace-nowrap">400 ₽</p>
+                        </li>
+                        <li class="h-22 flex items-end gap-2">
+                          <p>Кольпоскопия простая</p>
+                          <div
+                            class="flex-1 border-b border-dashed border-brand-gray-100 pt-2"
+                          ></div>
+                          <p class="whitespace-nowrap">600 ₽</p>
+                        </li>
+                        <li class="h-22 flex items-end gap-2">
+                          <p>
+                            Забор материала на ПЦР диагностику,посев,
+                            онкоцитологию
+                          </p>
+                          <div
+                            class="flex-1 border-b border-dashed border-brand-gray-100 pt-2"
+                          ></div>
+                          <p class="whitespace-nowrap">100 ₽</p>
+                        </li>
+                        <li class="h-22 flex items-end gap-2">
+                          <p>Удаление ВМС простое</p>
+                          <div
+                            class="flex-1 border-b border-dashed border-brand-gray-100 pt-2"
+                          ></div>
+                          <p class="whitespace-nowrap">400 ₽</p>
+                        </li>
+                        <li class="h-22 flex items-end gap-2">
+                          <p>Удаление ВМС крючком</p>
+                          <div
+                            class="flex-1 border-b border-dashed border-brand-gray-100 pt-2"
+                          ></div>
+                          <p class="whitespace-nowrap">1 200 ₽</p>
+                        </li>
+                        <li class="h-22 flex items-end gap-2">
+                          <p>Введение ВМС</p>
+                          <div
+                            class="flex-1 border-b border-dashed border-brand-gray-100 pt-2"
+                          ></div>
+                          <p class="whitespace-nowrap">1 000 ₽</p>
+                        </li>
+                        <li class="h-22 flex items-end gap-2">
+                          <p>Биопсия ш/матки</p>
+                          <div
+                            class="flex-1 border-b border-dashed border-brand-gray-100 pt-2"
+                          ></div>
+                          <p class="whitespace-nowrap">1 500 ₽</p>
+                        </li>
+                        <li class="h-22 flex items-end gap-2">
+                          <p>Биопсия ш/матки расширенная</p>
+                          <div
+                            class="flex-1 border-b border-dashed border-brand-gray-100 pt-2"
+                          ></div>
+                          <p class="whitespace-nowrap">2 200 ₽</p>
+                        </li>
+                        <li class="h-22 flex items-end gap-2">
+                          <p>Радиоволновая хирургия (рвх) ш/матки</p>
+                          <div
+                            class="flex-1 border-b border-dashed border-brand-gray-100 pt-2"
+                          ></div>
+                          <p class="whitespace-nowrap">1 500 ₽</p>
+                        </li>
+                        <li class="h-22 flex items-end gap-2">
+                          <p>Удаление полипа с помощью рвх</p>
+                          <div
+                            class="flex-1 border-b border-dashed border-brand-gray-100 pt-2"
+                          ></div>
+                          <p class="whitespace-nowrap">1 500 ₽</p>
+                        </li>
+                        <li class="h-22 flex items-end gap-2">
+                          <p>Эксцизия ш/матки</p>
+                          <div
+                            class="flex-1 border-b border-dashed border-brand-gray-100 pt-2"
+                          ></div>
+                          <p class="whitespace-nowrap">2 000 ₽</p>
+                        </li>
+                        <li class="h-22 flex items-end gap-2">
+                          <p>Вскрытие наботовой кисты</p>
+                          <div
+                            class="flex-1 border-b border-dashed border-brand-gray-100 pt-2"
+                          ></div>
+                          <p class="whitespace-nowrap">500 ₽</p>
+                        </li>
+                        <li class="h-22 flex items-end gap-2">
+                          <p>
+                            Гистологическое исследование материала из цервик.
+                            канала и/или полости матки (соскобы, аспираты)
+                          </p>
+                          <div
+                            class="flex-1 border-b border-dashed border-brand-gray-100 pt-2"
+                          ></div>
+                          <p class="whitespace-nowrap">1 200 ₽</p>
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="space-y-6">
+                      <h3>Эндокринолог</h3>
+                      <ul
+                        class="space-y-2 sm:space-y-3 text-brand-dark/60 text-xs sm:text-sm md:text-base lg:text-lg lg:px-5 xl:px-6"
+                      >
+                        <li class="h-22 flex items-end gap-2">
+                          <p>Первичный прием эндокринолога</p>
+                          <div
+                            class="flex-1 border-b border-dashed border-brand-gray-100 pt-2"
+                          ></div>
+                          <p class="whitespace-nowrap">750 ₽</p>
+                        </li>
+                        <li class="h-22 flex items-end gap-2">
+                          <p>Повторный прием эндокринолога</p>
+                          <div
+                            class="flex-1 border-b border-dashed border-brand-gray-100 pt-2"
+                          ></div>
+                          <p class="whitespace-nowrap">600 ₽</p>
+                        </li>
+                        <li class="h-22 flex items-end gap-2">
+                          <p>Консультация по результатам анализов</p>
+                          <div
+                            class="flex-1 border-b border-dashed border-brand-gray-100 pt-2"
+                          ></div>
+                          <p class="whitespace-nowrap">400 ₽</p>
+                        </li>
+                        <li class="h-22 flex items-end gap-2">
+                          <p>Анализ крови на сахар из пальца</p>
+                          <div
+                            class="flex-1 border-b border-dashed border-brand-gray-100 pt-2"
+                          ></div>
+                          <p class="whitespace-nowrap">150 ₽</p>
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="space-y-6">
+                      <h3>Мануальный терапевт диагностика</h3>
+                      <ul
+                        class="space-y-2 sm:space-y-3 text-brand-dark/60 text-xs sm:text-sm md:text-base lg:text-lg lg:px-5 xl:px-6"
+                      >
+                        <li class="h-22 flex items-end gap-2">
+                          <p>Диагностический осмотр</p>
+                          <div
+                            class="flex-1 border-b border-dashed border-brand-gray-100 pt-2"
+                          ></div>
+                          <p class="whitespace-nowrap">800 ₽</p>
+                        </li>
+                        <li class="h-22 flex items-end gap-2">
+                          <p>Сеанс мануальной терапии</p>
+                          <div
+                            class="flex-1 border-b border-dashed border-brand-gray-100 pt-2"
+                          ></div>
+                          <p class="whitespace-nowrap">1 500 ₽</p>
+                        </li>
+                        <li class="h-22 flex items-end gap-2">
+                          <p>Повторный сеанс мануальной терапии</p>
+                          <div
+                            class="flex-1 border-b border-dashed border-brand-gray-100 pt-2"
+                          ></div>
+                          <p class="whitespace-nowrap">1 200 ₽</p>
+                        </li>
+                        <li class="h-22 flex items-end gap-2">
+                          <p>Внутримышечная инъекция</p>
+                          <div
+                            class="flex-1 border-b border-dashed border-brand-gray-100 pt-2"
+                          ></div>
+                          <p class="whitespace-nowrap">300 ₽</p>
+                        </li>
+                      </ul>
+                    </div>
 
-                <button
-                  class="h-12 sm:h-14 xl:h-16 w-full sm:text-lg lg:text-xl font-medium border border-brand-dark/20 rounded-2xl lg:rounded-20 hover:bg-brand-whitish transition-all duration-300"
-                >
-                  Показать больше
-                </button>
+                    <button
+                      class="h-12 sm:h-14 xl:h-16 w-full sm:text-lg lg:text-xl font-medium border border-brand-dark/20 rounded-2xl lg:rounded-20 hover:bg-brand-whitish transition-all duration-300"
+                    >
+                      Показать больше
+                    </button>
+                  </div>
+                </div>
+                <!-- Price 2 -->
+                <div class="swiper-slide">
+                  <div
+                    class="space-y-10 lg:space-y-[3.25rem] bg-white rounded-3xl md:rounded-32 lg:rounded-56 shadow-base transition-all duration-300 p-7 lg:p-10"
+                  >
+                    <div class="space-y-6">
+                      <h3>Гинеколог</h3>
+                      <ul
+                        class="space-y-2 sm:space-y-3 text-brand-dark/60 text-xs sm:text-sm md:text-base lg:text-lg lg:px-5 xl:px-6"
+                      >
+                        <li class="h-22 flex items-end gap-2">
+                          <p>Первичный прием гинеколога</p>
+                          <div
+                            class="flex-1 border-b border-dashed border-brand-gray-100 pt-2"
+                          ></div>
+                          <p class="whitespace-nowrap">750 ₽</p>
+                        </li>
+                        <li class="h-22 flex items-end gap-2">
+                          <p>Повторный прием гинеколога</p>
+                          <div
+                            class="flex-1 border-b border-dashed border-brand-gray-100 pt-2"
+                          ></div>
+                          <p class="whitespace-nowrap">600 ₽</p>
+                        </li>
+                        <li class="h-22 flex items-end gap-2">
+                          <p>Консультация по результатам анализов</p>
+                          <div
+                            class="flex-1 border-b border-dashed border-brand-gray-100 pt-2"
+                          ></div>
+                          <p class="whitespace-nowrap">400 ₽</p>
+                        </li>
+                        <li class="h-22 flex items-end gap-2">
+                          <p>Кольпоскопия простая</p>
+                          <div
+                            class="flex-1 border-b border-dashed border-brand-gray-100 pt-2"
+                          ></div>
+                          <p class="whitespace-nowrap">600 ₽</p>
+                        </li>
+                        <li class="h-22 flex items-end gap-2">
+                          <p>
+                            Забор материала на ПЦР диагностику,посев,
+                            онкоцитологию
+                          </p>
+                          <div
+                            class="flex-1 border-b border-dashed border-brand-gray-100 pt-2"
+                          ></div>
+                          <p class="whitespace-nowrap">100 ₽</p>
+                        </li>
+                        <li class="h-22 flex items-end gap-2">
+                          <p>Удаление ВМС простое</p>
+                          <div
+                            class="flex-1 border-b border-dashed border-brand-gray-100 pt-2"
+                          ></div>
+                          <p class="whitespace-nowrap">400 ₽</p>
+                        </li>
+                        <li class="h-22 flex items-end gap-2">
+                          <p>Удаление ВМС крючком</p>
+                          <div
+                            class="flex-1 border-b border-dashed border-brand-gray-100 pt-2"
+                          ></div>
+                          <p class="whitespace-nowrap">1 200 ₽</p>
+                        </li>
+                        <li class="h-22 flex items-end gap-2">
+                          <p>Введение ВМС</p>
+                          <div
+                            class="flex-1 border-b border-dashed border-brand-gray-100 pt-2"
+                          ></div>
+                          <p class="whitespace-nowrap">1 000 ₽</p>
+                        </li>
+                        <li class="h-22 flex items-end gap-2">
+                          <p>Биопсия ш/матки</p>
+                          <div
+                            class="flex-1 border-b border-dashed border-brand-gray-100 pt-2"
+                          ></div>
+                          <p class="whitespace-nowrap">1 500 ₽</p>
+                        </li>
+                        <li class="h-22 flex items-end gap-2">
+                          <p>Биопсия ш/матки расширенная</p>
+                          <div
+                            class="flex-1 border-b border-dashed border-brand-gray-100 pt-2"
+                          ></div>
+                          <p class="whitespace-nowrap">2 200 ₽</p>
+                        </li>
+                        <li class="h-22 flex items-end gap-2">
+                          <p>Радиоволновая хирургия (рвх) ш/матки</p>
+                          <div
+                            class="flex-1 border-b border-dashed border-brand-gray-100 pt-2"
+                          ></div>
+                          <p class="whitespace-nowrap">1 500 ₽</p>
+                        </li>
+                        <li class="h-22 flex items-end gap-2">
+                          <p>Удаление полипа с помощью рвх</p>
+                          <div
+                            class="flex-1 border-b border-dashed border-brand-gray-100 pt-2"
+                          ></div>
+                          <p class="whitespace-nowrap">1 500 ₽</p>
+                        </li>
+                        <li class="h-22 flex items-end gap-2">
+                          <p>Эксцизия ш/матки</p>
+                          <div
+                            class="flex-1 border-b border-dashed border-brand-gray-100 pt-2"
+                          ></div>
+                          <p class="whitespace-nowrap">2 000 ₽</p>
+                        </li>
+                        <li class="h-22 flex items-end gap-2">
+                          <p>Вскрытие наботовой кисты</p>
+                          <div
+                            class="flex-1 border-b border-dashed border-brand-gray-100 pt-2"
+                          ></div>
+                          <p class="whitespace-nowrap">500 ₽</p>
+                        </li>
+                        <li class="h-22 flex items-end gap-2">
+                          <p>
+                            Гистологическое исследование материала из цервик.
+                            канала и/или полости матки (соскобы, аспираты)
+                          </p>
+                          <div
+                            class="flex-1 border-b border-dashed border-brand-gray-100 pt-2"
+                          ></div>
+                          <p class="whitespace-nowrap">1 200 ₽</p>
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="space-y-6">
+                      <h3>Эндокринолог</h3>
+                      <ul
+                        class="space-y-2 sm:space-y-3 text-brand-dark/60 text-xs sm:text-sm md:text-base lg:text-lg lg:px-5 xl:px-6"
+                      >
+                        <li class="h-22 flex items-end gap-2">
+                          <p>Первичный прием эндокринолога</p>
+                          <div
+                            class="flex-1 border-b border-dashed border-brand-gray-100 pt-2"
+                          ></div>
+                          <p class="whitespace-nowrap">750 ₽</p>
+                        </li>
+                        <li class="h-22 flex items-end gap-2">
+                          <p>Повторный прием эндокринолога</p>
+                          <div
+                            class="flex-1 border-b border-dashed border-brand-gray-100 pt-2"
+                          ></div>
+                          <p class="whitespace-nowrap">600 ₽</p>
+                        </li>
+                        <li class="h-22 flex items-end gap-2">
+                          <p>Консультация по результатам анализов</p>
+                          <div
+                            class="flex-1 border-b border-dashed border-brand-gray-100 pt-2"
+                          ></div>
+                          <p class="whitespace-nowrap">400 ₽</p>
+                        </li>
+                        <li class="h-22 flex items-end gap-2">
+                          <p>Анализ крови на сахар из пальца</p>
+                          <div
+                            class="flex-1 border-b border-dashed border-brand-gray-100 pt-2"
+                          ></div>
+                          <p class="whitespace-nowrap">150 ₽</p>
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="space-y-6">
+                      <h3>Мануальный терапевт диагностика</h3>
+                      <ul
+                        class="space-y-2 sm:space-y-3 text-brand-dark/60 text-xs sm:text-sm md:text-base lg:text-lg lg:px-5 xl:px-6"
+                      >
+                        <li class="h-22 flex items-end gap-2">
+                          <p>Диагностический осмотр</p>
+                          <div
+                            class="flex-1 border-b border-dashed border-brand-gray-100 pt-2"
+                          ></div>
+                          <p class="whitespace-nowrap">800 ₽</p>
+                        </li>
+                        <li class="h-22 flex items-end gap-2">
+                          <p>Сеанс мануальной терапии</p>
+                          <div
+                            class="flex-1 border-b border-dashed border-brand-gray-100 pt-2"
+                          ></div>
+                          <p class="whitespace-nowrap">1 500 ₽</p>
+                        </li>
+                        <li class="h-22 flex items-end gap-2">
+                          <p>Повторный сеанс мануальной терапии</p>
+                          <div
+                            class="flex-1 border-b border-dashed border-brand-gray-100 pt-2"
+                          ></div>
+                          <p class="whitespace-nowrap">1 200 ₽</p>
+                        </li>
+                        <li class="h-22 flex items-end gap-2">
+                          <p>Внутримышечная инъекция</p>
+                          <div
+                            class="flex-1 border-b border-dashed border-brand-gray-100 pt-2"
+                          ></div>
+                          <p class="whitespace-nowrap">300 ₽</p>
+                        </li>
+                      </ul>
+                    </div>
+
+                    <button
+                      class="h-12 sm:h-14 xl:h-16 w-full sm:text-lg lg:text-xl font-medium border border-brand-dark/20 rounded-2xl lg:rounded-20 hover:bg-brand-whitish transition-all duration-300"
+                    >
+                      Показать больше
+                    </button>
+                  </div>
+                </div>
+                <!-- Price 3 -->
+                <div class="swiper-slide">
+                  <div
+                    class="space-y-10 lg:space-y-[3.25rem] bg-white rounded-3xl md:rounded-32 lg:rounded-56 shadow-base transition-all duration-300 p-7 lg:p-10"
+                  >
+                    <div class="space-y-6">
+                      <h3>Гинеколог</h3>
+                      <ul
+                        class="space-y-2 sm:space-y-3 text-brand-dark/60 text-xs sm:text-sm md:text-base lg:text-lg lg:px-5 xl:px-6"
+                      >
+                        <li class="h-22 flex items-end gap-2">
+                          <p>Первичный прием гинеколога</p>
+                          <div
+                            class="flex-1 border-b border-dashed border-brand-gray-100 pt-2"
+                          ></div>
+                          <p class="whitespace-nowrap">750 ₽</p>
+                        </li>
+                        <li class="h-22 flex items-end gap-2">
+                          <p>Повторный прием гинеколога</p>
+                          <div
+                            class="flex-1 border-b border-dashed border-brand-gray-100 pt-2"
+                          ></div>
+                          <p class="whitespace-nowrap">600 ₽</p>
+                        </li>
+                        <li class="h-22 flex items-end gap-2">
+                          <p>Консультация по результатам анализов</p>
+                          <div
+                            class="flex-1 border-b border-dashed border-brand-gray-100 pt-2"
+                          ></div>
+                          <p class="whitespace-nowrap">400 ₽</p>
+                        </li>
+                        <li class="h-22 flex items-end gap-2">
+                          <p>Кольпоскопия простая</p>
+                          <div
+                            class="flex-1 border-b border-dashed border-brand-gray-100 pt-2"
+                          ></div>
+                          <p class="whitespace-nowrap">600 ₽</p>
+                        </li>
+                        <li class="h-22 flex items-end gap-2">
+                          <p>
+                            Забор материала на ПЦР диагностику,посев,
+                            онкоцитологию
+                          </p>
+                          <div
+                            class="flex-1 border-b border-dashed border-brand-gray-100 pt-2"
+                          ></div>
+                          <p class="whitespace-nowrap">100 ₽</p>
+                        </li>
+                        <li class="h-22 flex items-end gap-2">
+                          <p>Удаление ВМС простое</p>
+                          <div
+                            class="flex-1 border-b border-dashed border-brand-gray-100 pt-2"
+                          ></div>
+                          <p class="whitespace-nowrap">400 ₽</p>
+                        </li>
+                        <li class="h-22 flex items-end gap-2">
+                          <p>Удаление ВМС крючком</p>
+                          <div
+                            class="flex-1 border-b border-dashed border-brand-gray-100 pt-2"
+                          ></div>
+                          <p class="whitespace-nowrap">1 200 ₽</p>
+                        </li>
+                        <li class="h-22 flex items-end gap-2">
+                          <p>Введение ВМС</p>
+                          <div
+                            class="flex-1 border-b border-dashed border-brand-gray-100 pt-2"
+                          ></div>
+                          <p class="whitespace-nowrap">1 000 ₽</p>
+                        </li>
+                        <li class="h-22 flex items-end gap-2">
+                          <p>Биопсия ш/матки</p>
+                          <div
+                            class="flex-1 border-b border-dashed border-brand-gray-100 pt-2"
+                          ></div>
+                          <p class="whitespace-nowrap">1 500 ₽</p>
+                        </li>
+                        <li class="h-22 flex items-end gap-2">
+                          <p>Биопсия ш/матки расширенная</p>
+                          <div
+                            class="flex-1 border-b border-dashed border-brand-gray-100 pt-2"
+                          ></div>
+                          <p class="whitespace-nowrap">2 200 ₽</p>
+                        </li>
+                        <li class="h-22 flex items-end gap-2">
+                          <p>Радиоволновая хирургия (рвх) ш/матки</p>
+                          <div
+                            class="flex-1 border-b border-dashed border-brand-gray-100 pt-2"
+                          ></div>
+                          <p class="whitespace-nowrap">1 500 ₽</p>
+                        </li>
+                        <li class="h-22 flex items-end gap-2">
+                          <p>Удаление полипа с помощью рвх</p>
+                          <div
+                            class="flex-1 border-b border-dashed border-brand-gray-100 pt-2"
+                          ></div>
+                          <p class="whitespace-nowrap">1 500 ₽</p>
+                        </li>
+                        <li class="h-22 flex items-end gap-2">
+                          <p>Эксцизия ш/матки</p>
+                          <div
+                            class="flex-1 border-b border-dashed border-brand-gray-100 pt-2"
+                          ></div>
+                          <p class="whitespace-nowrap">2 000 ₽</p>
+                        </li>
+                        <li class="h-22 flex items-end gap-2">
+                          <p>Вскрытие наботовой кисты</p>
+                          <div
+                            class="flex-1 border-b border-dashed border-brand-gray-100 pt-2"
+                          ></div>
+                          <p class="whitespace-nowrap">500 ₽</p>
+                        </li>
+                        <li class="h-22 flex items-end gap-2">
+                          <p>
+                            Гистологическое исследование материала из цервик.
+                            канала и/или полости матки (соскобы, аспираты)
+                          </p>
+                          <div
+                            class="flex-1 border-b border-dashed border-brand-gray-100 pt-2"
+                          ></div>
+                          <p class="whitespace-nowrap">1 200 ₽</p>
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="space-y-6">
+                      <h3>Эндокринолог</h3>
+                      <ul
+                        class="space-y-2 sm:space-y-3 text-brand-dark/60 text-xs sm:text-sm md:text-base lg:text-lg lg:px-5 xl:px-6"
+                      >
+                        <li class="h-22 flex items-end gap-2">
+                          <p>Первичный прием эндокринолога</p>
+                          <div
+                            class="flex-1 border-b border-dashed border-brand-gray-100 pt-2"
+                          ></div>
+                          <p class="whitespace-nowrap">750 ₽</p>
+                        </li>
+                        <li class="h-22 flex items-end gap-2">
+                          <p>Повторный прием эндокринолога</p>
+                          <div
+                            class="flex-1 border-b border-dashed border-brand-gray-100 pt-2"
+                          ></div>
+                          <p class="whitespace-nowrap">600 ₽</p>
+                        </li>
+                        <li class="h-22 flex items-end gap-2">
+                          <p>Консультация по результатам анализов</p>
+                          <div
+                            class="flex-1 border-b border-dashed border-brand-gray-100 pt-2"
+                          ></div>
+                          <p class="whitespace-nowrap">400 ₽</p>
+                        </li>
+                        <li class="h-22 flex items-end gap-2">
+                          <p>Анализ крови на сахар из пальца</p>
+                          <div
+                            class="flex-1 border-b border-dashed border-brand-gray-100 pt-2"
+                          ></div>
+                          <p class="whitespace-nowrap">150 ₽</p>
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="space-y-6">
+                      <h3>Мануальный терапевт диагностика</h3>
+                      <ul
+                        class="space-y-2 sm:space-y-3 text-brand-dark/60 text-xs sm:text-sm md:text-base lg:text-lg lg:px-5 xl:px-6"
+                      >
+                        <li class="h-22 flex items-end gap-2">
+                          <p>Диагностический осмотр</p>
+                          <div
+                            class="flex-1 border-b border-dashed border-brand-gray-100 pt-2"
+                          ></div>
+                          <p class="whitespace-nowrap">800 ₽</p>
+                        </li>
+                        <li class="h-22 flex items-end gap-2">
+                          <p>Сеанс мануальной терапии</p>
+                          <div
+                            class="flex-1 border-b border-dashed border-brand-gray-100 pt-2"
+                          ></div>
+                          <p class="whitespace-nowrap">1 500 ₽</p>
+                        </li>
+                        <li class="h-22 flex items-end gap-2">
+                          <p>Повторный сеанс мануальной терапии</p>
+                          <div
+                            class="flex-1 border-b border-dashed border-brand-gray-100 pt-2"
+                          ></div>
+                          <p class="whitespace-nowrap">1 200 ₽</p>
+                        </li>
+                        <li class="h-22 flex items-end gap-2">
+                          <p>Внутримышечная инъекция</p>
+                          <div
+                            class="flex-1 border-b border-dashed border-brand-gray-100 pt-2"
+                          ></div>
+                          <p class="whitespace-nowrap">300 ₽</p>
+                        </li>
+                      </ul>
+                    </div>
+
+                    <button
+                      class="h-12 sm:h-14 xl:h-16 w-full sm:text-lg lg:text-xl font-medium border border-brand-dark/20 rounded-2xl lg:rounded-20 hover:bg-brand-whitish transition-all duration-300"
+                    >
+                      Показать больше
+                    </button>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -1654,7 +2076,8 @@
         </div>
       </div>
     </footer>
-
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="./js/script.js"></script>
   </body>
 </html>
