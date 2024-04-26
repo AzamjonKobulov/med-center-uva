@@ -56,35 +56,38 @@ const buttonsContainer = document.getElementById('buttonsContainer');
 // Get the navigation button
 const goRightButton = document.getElementById('goRight');
 
+// Get the arrow icon
+const arrowIcon = document.getElementById('arrowIcon');
+
 // Add click event listener to the navigation button
 goRightButton.addEventListener('click', function () {
-  // Calculate the amount to scroll
-  const scrollAmount = 100; // Adjust this value as needed
-  const scrollDuration = 300; // Duration of the scroll animation in milliseconds
+  // Toggle rotation class on arrow icon
+  arrowIcon.classList.toggle('rotate-180');
 
-  // Get the initial scroll position
-  const startScroll = buttonsContainer.scrollLeft;
-
-  // Calculate the target scroll position
-  const targetScroll = startScroll + scrollAmount;
-
-  // Define the start time of the scroll animation
-  const startTime = performance.now();
-
-  // Define the scroll animation function
-  function scrollAnimation(currentTime) {
-    const elapsedTime = currentTime - startTime;
-    const scrollProgress = Math.min(elapsedTime / scrollDuration, 1);
-    const easedProgress = scrollProgress * (2 - scrollProgress);
-
-    buttonsContainer.scrollLeft =
-      startScroll + (targetScroll - startScroll) * easedProgress;
-
-    if (scrollProgress < 1) {
-      requestAnimationFrame(scrollAnimation);
-    }
+  // If the container is scrolled all the way to the right
+  if (
+    buttonsContainer.scrollLeft ===
+    buttonsContainer.scrollWidth - buttonsContainer.clientWidth
+  ) {
+    // Scroll to the start
+    buttonsContainer.scrollTo({ left: 0, behavior: 'smooth' });
+  } else {
+    // Otherwise, scroll to the right
+    buttonsContainer.scrollBy({ left: 100, behavior: 'smooth' });
   }
+});
 
-  // Start the scroll animation
-  requestAnimationFrame(scrollAnimation);
+// Add event listener for scroll end
+buttonsContainer.addEventListener('scroll', function () {
+  // If the container is scrolled all the way to the right
+  if (
+    buttonsContainer.scrollLeft ===
+    buttonsContainer.scrollWidth - buttonsContainer.clientWidth
+  ) {
+    // Add rotation class to arrow icon
+    arrowIcon.classList.add('rotate-180');
+  } else {
+    // Remove rotation class from arrow icon
+    arrowIcon.classList.remove('rotate-180');
+  }
 });
