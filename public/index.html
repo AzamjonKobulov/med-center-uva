@@ -1643,19 +1643,22 @@
       <!-- License -->
       <section id="license">
         <div class="max-w-base mx-auto px-5">
+          <!-- License Slider -->
           <div
-            class="sm:h-[34.375rem] lg:h-[45.75rem] grid sm:grid-cols-2 bg-white divide-y sm:divide-x divide-brand-light-gray rounded-3xl xs:rounded-32 md:rounded-base lg:rounded-56 shadow-base overflow-hidden"
+            id="licenseSlider"
+            class="sm:h-[31.25rem] lg:h-[40.625rem] grid sm:grid-cols-2 bg-white divide-y sm:divide-x divide-brand-light-gray rounded-3xl xs:rounded-32 md:rounded-base lg:rounded-56 shadow-base overflow-hidden"
           >
             <div class="relative grid place-content-center py-8 sm:py-0">
               <h3 class="absolute top-5 left-5 sm:top-8 sm:left-8">Лицензии</h3>
               <!-- Active Image of License -->
               <div
-                class="max-w-56 xs:max-w-72 lg:max-w-80 sm:w-full mt-10 sm:mt-0"
+                id="licenseActiveSlideImage"
+                class="w-56 xs:w-72 lg:w-80 shrink-0 mt-10 sm:mt-0"
               >
                 <img
-                  src="./assets/images/img-license.png"
-                  alt="Licence"
-                  class="w-full h-full object-cover"
+                  src="./assets/images/img-license-2.png"
+                  alt="License"
+                  class="w-full h-full object-cover transition-all duration-300"
                 />
               </div>
             </div>
@@ -1671,37 +1674,41 @@
                 class="h-full w-16 sm:h-28 lg:h-40 sm:w-full absolute right-0 sm:bottom-0 z-20 bg-gradient-license"
               ></div>
 
-              <!-- Licences -->
+              <!-- Licenses -->
               <div
-                class="sm:absolute left-1/2 sm:-translate-x-1/2 -top-[20%] w-fit mx-auto flex sm:flex-col gap-8 lg:gap-16"
+                id="licenseSlides"
+                class="sm:absolute left-1/3 -translate-x-1/3 -top-1/4 w-fit mx-auto flex sm:flex-col justify-center items-center gap-8 lg:gap-16 transition-all duration-300"
               >
-                <div
-                  class="w-16 h-20 xs:w-20 xs:h-28 sm:h-40 sm:w-32 lg:w-[13.5rem] lg:h-72 bg-white rounded-lg sm:rounded-2xl p-1.5 sm:p-5 lg:p-8"
+                <!-- License 1 -->
+                <button
+                  class="w-16 h-20 xs:w-20 xs:h-28 sm:h-40 sm:w-32 lg:w-[13.5rem] lg:h-72 shrink-0 bg-white rounded-lg sm:rounded-2xl hover:shadow-base transition-all duration-300 p-1.5 sm:p-3.5 lg:p-7"
                 >
                   <img
                     src="./assets/images/img-license.png"
                     alt="License"
                     class="w-full h-full"
                   />
-                </div>
-                <div
-                  class="w-16 h-20 xs:w-20 xs:h-28 sm:h-40 sm:w-32 lg:w-[13.5rem] lg:h-72 bg-white rounded-lg sm:rounded-2xl shadow-base p-1.5 sm:p-5 lg:p-8"
+                </button>
+                <!-- License 2 -->
+                <button
+                  class="w-16 h-20 xs:w-20 xs:h-28 sm:h-40 sm:w-32 lg:w-[13.5rem] lg:h-72 shrink-0 bg-white rounded-lg sm:rounded-2xl hover:shadow-base transition-all duration-300 p-1.5 sm:p-3.5 lg:p-7"
                 >
                   <img
-                    src="./assets/images/img-license.png"
+                    src="./assets/images/img-license-2.png"
                     alt="License"
                     class="w-full h-full"
                   />
-                </div>
-                <div
-                  class="w-16 h-20 xs:w-20 xs:h-28 sm:h-40 sm:w-32 lg:w-[13.5rem] lg:h-72 bg-white rounded-lg sm:rounded-2xl p-1.5 sm:p-5 lg:p-8"
+                </button>
+                <!-- License 3 -->
+                <button
+                  class="w-16 h-20 xs:w-20 xs:h-28 sm:h-40 sm:w-32 lg:w-[13.5rem] lg:h-72 shrink-0 bg-white rounded-lg sm:rounded-2xl hover:shadow-base transition-all duration-300 p-1.5 sm:p-3.5 lg:p-7"
                 >
                   <img
-                    src="./assets/images/img-license.png"
+                    src="./assets/images/img-license-3.png"
                     alt="License"
                     class="w-full h-full"
                   />
-                </div>
+                </button>
               </div>
 
               <!-- License Navigating Buttons -->
@@ -1709,6 +1716,7 @@
                 class="sm:absolute right-8 top-1/2 -translate-y-1/2 flex justify-center mt-14 sm:mt-0 sm:flex-col gap-6 sm:gap-3"
               >
                 <button
+                  id="licenseSlidePrevBtn"
                   class="w-9 h-9 md:w-12 md:h-12 shrink-0 grid place-content-center border border-brand-dark rounded-xl md:rounded-2xl"
                 >
                   <svg
@@ -1726,7 +1734,8 @@
                   </svg>
                 </button>
                 <button
-                  class="w-9 h-9 md:w-12 md:h-12 shrink-0 grid place-content-center border border-brand-dark/20 rounded-xl md:rounded-2xl"
+                  id="licenseSlideNextBtn"
+                  class="w-9 h-9 md:w-12 md:h-12 shrink-0 grid place-content-center border border-brand-dark rounded-xl md:rounded-2xl"
                 >
                   <svg
                     width="32"
@@ -1739,7 +1748,6 @@
                     <path
                       d="M16 20.9667C15.8222 20.9667 15.6555 20.9392 15.5 20.8841C15.3444 20.829 15.2 20.7343 15.0667 20.6001L8.93332 14.4667C8.68887 14.2223 8.56665 13.9112 8.56665 13.5334C8.56665 13.1556 8.68887 12.8445 8.93332 12.6001C9.17776 12.3556 9.48887 12.2334 9.86665 12.2334C10.2444 12.2334 10.5555 12.3556 10.8 12.6001L16 17.8001L21.2 12.6001C21.4444 12.3556 21.7555 12.2334 22.1333 12.2334C22.5111 12.2334 22.8222 12.3556 23.0666 12.6001C23.3111 12.8445 23.4333 13.1556 23.4333 13.5334C23.4333 13.9112 23.3111 14.2223 23.0666 14.4667L16.9333 20.6001C16.8 20.7334 16.6555 20.8281 16.5 20.8841C16.3444 20.9401 16.1778 20.9676 16 20.9667Z"
                       fill="#343A47"
-                      fill-opacity="0.4"
                     />
                   </svg>
                 </button>

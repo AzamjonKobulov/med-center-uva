@@ -145,3 +145,129 @@ tabContents.forEach(function (tab, index) {
     });
   });
 });
+
+document.addEventListener('DOMContentLoaded', function () {
+  // Get necessary elements
+  const licenseSlider = document.getElementById('licenseSlider');
+  const licenseSlides = licenseSlider.querySelector('#licenseSlides');
+  const prevBtn = licenseSlider.querySelector('#licenseSlidePrevBtn');
+  const nextBtn = licenseSlider.querySelector('#licenseSlideNextBtn');
+  const buttons = licenseSlides.querySelectorAll('button');
+  const activeSlideImage = document
+    .getElementById('licenseActiveSlideImage')
+    .querySelector('img');
+
+  let currentSlide = 0;
+  let totalSlides = buttons.length;
+  const slideWidth = licenseSlides.children[0].offsetWidth;
+  const slideHeight = licenseSlides.children[0].offsetHeight;
+  const containerWidth = licenseSlides.offsetWidth;
+  const containerHeight = licenseSlides.offsetHeight;
+
+  // Function to show the current slide
+  function showSlide(slideIndex) {
+    if (slideIndex < 0) {
+      slideIndex = totalSlides - 1;
+    } else if (slideIndex >= totalSlides) {
+      slideIndex = 0;
+    }
+
+    let translateXValue = 0;
+    let translateYValue = 0;
+
+    // Check viewport width
+    if (window.innerWidth < 640) {
+      // Calculate horizontal translation
+      translateXValue = -(
+        slideIndex * slideWidth -
+        (containerWidth - slideWidth) / 2
+      );
+      // Set flex-direction to row
+      licenseSlides.style.flexDirection = 'row';
+      // Set container width to fit all slides horizontally
+      licenseSlides.style.width = `${totalSlides * slideWidth}px`;
+    } else {
+      // Calculate vertical translation
+      translateYValue = -(
+        slideIndex * slideHeight -
+        (containerHeight - slideHeight) / 2
+      );
+      // Reset flex-direction to column
+      licenseSlides.style.flexDirection = 'column';
+      // Reset container width
+      licenseSlides.style.width = 'auto';
+    }
+
+    // Apply the translation
+    licenseSlides.style.transform = `translate(${translateXValue}px, ${translateYValue}px)`;
+
+    // Remove shadow-base class from all buttons
+    buttons.forEach((button) => button.classList.remove('shadow-base'));
+    // Add shadow-base class to the active slide button
+    buttons[slideIndex].classList.add('shadow-base');
+
+    // Set the active slide image source
+    const activeSlideImageUrl = buttons[slideIndex].querySelector('img').src;
+
+    // Smoothly fade out the active slide image
+    activeSlideImage.classList.remove('opacity-100');
+    activeSlideImage.classList.add('opacity-0');
+
+    setTimeout(() => {
+      // Set the new image source
+      activeSlideImage.src = activeSlideImageUrl;
+
+      // Smoothly fade in the new active slide image
+      activeSlideImage.classList.remove('opacity-0');
+      activeSlideImage.classList.add('opacity-100');
+    }, 300); // Adjust the delay as needed for transition duration
+
+    // Update current slide index
+    currentSlide = slideIndex;
+
+    // Check if the navigation buttons should be disabled and change opacity
+    if (currentSlide === 0) {
+      prevBtn.disabled = true; // Disable previous button if at the beginning
+      prevBtn.style.opacity = '0.5'; // Change opacity of disabled button
+    } else {
+      prevBtn.disabled = false; // Enable previous button otherwise
+      prevBtn.style.opacity = '1'; // Reset opacity of enabled button
+    }
+
+    if (currentSlide === totalSlides - 1) {
+      nextBtn.disabled = true; // Disable next button if at the end
+      nextBtn.style.opacity = '0.5'; // Change opacity of disabled button
+    } else {
+      nextBtn.disabled = false; // Enable next button otherwise
+      nextBtn.style.opacity = '1'; // Reset opacity of enabled button
+    }
+  }
+
+  // Event listener for previous button
+  prevBtn.addEventListener('click', function () {
+    showSlide(currentSlide - 1);
+  });
+
+  // Event listener for next button
+  nextBtn.addEventListener('click', function () {
+    showSlide(currentSlide + 1);
+  });
+
+  // Event listeners for slide buttons
+  buttons.forEach((button, index) => {
+    button.addEventListener('click', function () {
+      showSlide(index);
+    });
+  });
+
+  // Show the initial slide
+  showSlide(currentSlide);
+
+  // Resize event listener to adjust slide layout on window resize
+  window.addEventListener('resize', function () {
+    // Update total slides count
+    totalSlides = buttons.length;
+    // Re-show current slide to adjust layout
+    showSlide(currentSlide);
+  });
+});

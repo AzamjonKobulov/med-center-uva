@@ -85,6 +85,11 @@
   @apply !text-white;
 }
 
-.swiper-slide:not(.swiper-slide-active) {
+.swiper-slide:not(.swiper-slide-active) button {
   @apply border-none;
+}
+
+.show {
+  opacity: 1; /* Make the element visible */
+  transition: opacity 0.3s ease; /* Apply a smooth transition */
 }
