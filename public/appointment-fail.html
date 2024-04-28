@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Link Swiper's CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+    <link rel="stylesheet" href="./css/styles.css" />
+    <title>Med Center Uva</title>
+  </head>
+  <body>
+    <!-- Make an appointment fail -->
+    <div class="fixed inset-0 bg-brand-dark/80 flex items-end justify-end">
+      <div class="max-w-2xl mx-auto w-full max-h-screen relative px-4">
+        <!-- Close Button -->
+        <button class="absolute top-5 right-8 md:top-8 xl:top-12 xl:right-16">
+          <svg
+            width="32"
+            height="32"
+            viewBox="0 0 32 32"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M24.4001 7.61339C24.2767 7.48978 24.1302 7.39172 23.9689 7.32481C23.8076 7.2579 23.6347 7.22346 23.4601 7.22346C23.2854 7.22346 23.1125 7.2579 22.9512 7.32481C22.7899 7.39172 22.6434 7.48978 22.5201 7.61339L16.0001 14.1201L9.48005 7.60005C9.35661 7.47661 9.21006 7.37869 9.04878 7.31188C8.88749 7.24508 8.71463 7.21069 8.54005 7.21069C8.36548 7.21069 8.19262 7.24508 8.03133 7.31188C7.87004 7.37869 7.7235 7.47661 7.60005 7.60005C7.47661 7.7235 7.37869 7.87004 7.31188 8.03133C7.24508 8.19262 7.21069 8.36548 7.21069 8.54005C7.21069 8.71463 7.24508 8.88749 7.31188 9.04878C7.37869 9.21006 7.47661 9.35661 7.60005 9.48005L14.1201 16.0001L7.60005 22.5201C7.47661 22.6435 7.37869 22.79 7.31188 22.9513C7.24508 23.1126 7.21069 23.2855 7.21069 23.4601C7.21069 23.6346 7.24508 23.8075 7.31188 23.9688C7.37869 24.1301 7.47661 24.2766 7.60005 24.4001C7.7235 24.5235 7.87004 24.6214 8.03133 24.6882C8.19262 24.755 8.36548 24.7894 8.54005 24.7894C8.71463 24.7894 8.88749 24.755 9.04878 24.6882C9.21006 24.6214 9.35661 24.5235 9.48005 24.4001L16.0001 17.8801L22.5201 24.4001C22.6435 24.5235 22.79 24.6214 22.9513 24.6882C23.1126 24.755 23.2855 24.7894 23.4601 24.7894C23.6346 24.7894 23.8075 24.755 23.9688 24.6882C24.1301 24.6214 24.2766 24.5235 24.4001 24.4001C24.5235 24.2766 24.6214 24.1301 24.6882 23.9688C24.755 23.8075 24.7894 23.6346 24.7894 23.4601C24.7894 23.2855 24.755 23.1126 24.6882 22.9513C24.6214 22.79 24.5235 22.6435 24.4001 22.5201L17.8801 16.0001L24.4001 9.48005C24.9067 8.97339 24.9067 8.12005 24.4001 7.61339Z"
+              fill="#343A47"
+              fill-opacity="0.6"
+            />
+          </svg>
+        </button>
+        <div
+          class="h-[29.375rem] lg:h-[38.25rem] flex items-end justify-center bg-brand-whitish rounded-t-3xl xs:rounded-t-32 lg:rounded-t-base xl:rounded-t-56 p-7 md:p-8 xl:p-12"
+        >
+          <div class="w-full space-y-[7.5rem]">
+            <div
+              class="flex flex-col items-center space-y-5 lg:space-y-6 text-center"
+            >
+              <svg
+                width="64"
+                height="65"
+                viewBox="0 0 64 65"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M19.9997 44.5H23.9997V40.5H39.9997V44.5H43.9997V40.5H39.9997V36.5H23.9997V40.5H19.9997V44.5ZM21.333 32.5H25.333V25.8333H21.333V32.5ZM38.6663 32.5H42.6663V25.8333H38.6663V32.5ZM10.6663 53.8333C9.19968 53.8333 7.94368 53.3106 6.89835 52.2653C5.85301 51.22 5.33123 49.9649 5.33301 48.5V16.5C5.33301 15.0333 5.85568 13.7773 6.90101 12.732C7.94635 11.6866 9.20146 11.1649 10.6663 11.1666H26.6663L31.9997 16.5H53.333C54.7997 16.5 56.0557 17.0226 57.101 18.068C58.1463 19.1133 58.6681 20.3684 58.6663 21.8333V48.5C58.6663 49.9666 58.1437 51.2226 57.0984 52.268C56.053 53.3133 54.7979 53.8351 53.333 53.8333H10.6663ZM10.6663 48.5H53.333V21.8333H10.6663V48.5Z"
+                  fill="#FF8F0D"
+                />
+              </svg>
+
+              <h3 class="text-center">Ошибка</h3>
+              <p class="lg:text-lg text-brand-dark/60">Что-то пошло не так..</p>
+            </div>
+            <!-- Button -->
+            <button
+              class="h-12 sm:h-14 lg:h-16 w-full bg-gradient-to-r from-brand-orange-200 to-brand-orange-100 font-medium text-white sm:text-lg lg:text-xl rounded-lg sm:rounded-2xl lg:rounded-20 hover:bg-gradient-to-l transition-all duration-300 px-3 sm:px-4"
+            >
+              Попробовать снова
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
